@@ -11,12 +11,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const module_1 = require("magnet-core/module");
 const koaStatic = require("koa-static");
 const path = require("path");
-const koaStatic_1 = require("./config/koaStatic");
 class KoaStatic extends module_1.Module {
+    get moduleName() { return 'koa_static'; }
+    get defaultConfig() { return __dirname; }
     setup() {
         return __awaiter(this, void 0, void 0, function* () {
-            const config = this.prepareConfig('koaStatic', koaStatic_1.default);
-            this.app.koa.use(koaStatic(path.resolve(this.config.baseDirPath, config.directory), config));
+            this.app.koa.use(koaStatic(path.resolve(this.app.config.baseDirPath, this.config.directory), this.config));
         });
     }
 }
