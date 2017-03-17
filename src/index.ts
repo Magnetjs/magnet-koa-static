@@ -2,16 +2,15 @@ import { Module } from 'magnet-core/module'
 import * as koaStatic from 'koa-static'
 import * as path from 'path'
 
-import defaultConfig from './config/koaStatic'
-
 export default class KoaStatic extends Module {
-  async setup () {
-    const config = this.prepareConfig('koaStatic', defaultConfig)
+  get moduleName () { return 'koa_static' }
+  get defaultConfig () { return __dirname }
 
+  async setup () {
     this.app.koa.use(
       koaStatic(
-        path.resolve(this.config.baseDirPath, config.directory),
-        config
+        path.resolve(this.app.config.baseDirPath, this.config.directory),
+        this.config
       )
     )
   }
