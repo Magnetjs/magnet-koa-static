@@ -1,6 +1,6 @@
 {
   "name": "magnet-koa-static",
-  "version": "0.2.1",
+  "version": "1.0.0",
   "description": "Magnet adapter for koa-static",
   "keywords": [
     "magnet",
@@ -27,15 +27,17 @@
     "test": "ts-node tests/index.js | tap-spec"
   },
   "dependencies": {
-    "koa-static": "^3.0.0",
-    "magnet-core": "^3.3.0"
+    "koa-static": "^4.0.1",
+    "magnet-core": "^4.0.1"
   },
   "devDependencies": {
     "fly": "^2.0.5",
     "fly-clear": "^1.0.1",
     "fly-esnext": "^2.0.1",
+    "fly-flatten": "^1.0.1",
     "fly-typescript": "^1.0.0",
-    "fly-watch": "^1.1.1"
+    "fly-watch": "^1.1.1",
+    "standard": "^10.0.2"
   },
   "engines": {
     "node": ">=6.9.5"
