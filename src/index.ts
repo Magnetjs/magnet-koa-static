@@ -2,9 +2,11 @@ import { Module } from 'magnet-core/module'
 import * as koaStatic from 'koa-static'
 import * as path from 'path'
 
-export default class KoaStatic extends Module {
-  get moduleName () { return 'koa_static' }
-  get defaultConfig () { return __dirname }
+export default class MagnetKoaStatic extends Module {
+  init () {
+    this.moduleName = 'koa_static'
+    this.defaultConfig = __dirname
+  }
 
   async setup () {
     this.app.koa.use(
