@@ -27,7 +27,7 @@
     "test": "ts-node tests/index.js | tap-spec"
   },
   "dependencies": {
-    "koa-static": "^4.0.1",
+    "koa-static": "^5.0.0",
     "magnet-core": "^4.0.1"
   },
   "devDependencies": {
